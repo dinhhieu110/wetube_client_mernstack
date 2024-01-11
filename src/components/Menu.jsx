@@ -13,6 +13,7 @@ import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import SettingsBrightnessIcon from "@mui/icons-material/SettingsBrightness";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link, Route } from "react-router-dom";
 const Container = styled.div`
   flex: 1;
   height: 100vh;
@@ -42,6 +43,10 @@ const Item = styled.div`
   cursor: pointer;
   padding: 6.5px 0;
   font-size: 12px;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.soft};
+  }
 `;
 
 const Hr = styled.div`
@@ -77,14 +82,18 @@ export default function Menu({ darkMode, setDarkMode }) {
   return (
     <Container>
       <Wrapper>
-        <Logo>
-          <Img src={LogoImg} />
-          Wetube
-        </Logo>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <Logo>
+            <Img src={LogoImg} />
+            Wetube
+          </Logo>
+        </Link>
+        {/* <Link to="/" style={{ textDecoration: "none" }}> */}
         <Item>
           <HomeIcon />
           Home
         </Item>
+        {/* </Link> */}
         <Item>
           <ExploreIcon />
           Explore
@@ -105,10 +114,12 @@ export default function Menu({ darkMode, setDarkMode }) {
         <Hr />
         <Login>
           Sign to likes videos, comment, and suscribe.
-          <Btn>
-            <AccountCircleIcon />
-            SIGN IN
-          </Btn>
+          <Link to="signin" style={{ textDecoration: "none" }}>
+            <Btn>
+              <AccountCircleIcon />
+              SIGN IN
+            </Btn>
+          </Link>
         </Login>
         <Hr />
         <Title>BEST OF WETUBE</Title>
@@ -135,7 +146,7 @@ export default function Menu({ darkMode, setDarkMode }) {
         </Item>
         <Item onClick={() => setDarkMode(!darkMode)}>
           <SettingsBrightnessIcon />
-          Light mode
+          {darkMode ? "Light Mode" : "Dark Mode"}
         </Item>
       </Wrapper>
     </Container>
