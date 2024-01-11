@@ -1,4 +1,4 @@
-I created a MERN Stack website about social video sharing such as youtube
+I created a MERN Stack website about social video sharing 
 The core programing languages included in this project 
    + Client: React JS, Styled-Component, and so on.
    + Server: Node JS, Express, Mongo DB, and so on
