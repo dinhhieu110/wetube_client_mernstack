@@ -82,26 +82,33 @@ export default function Menu({ darkMode, setDarkMode }) {
   return (
     <Container>
       <Wrapper>
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
           <Logo>
             <Img src={LogoImg} />
             Wetube
           </Logo>
         </Link>
-        {/* <Link to="/" style={{ textDecoration: "none" }}> */}
-        <Item>
-          <HomeIcon />
-          Home
-        </Item>
-        {/* </Link> */}
-        <Item>
-          <ExploreIcon />
-          Explore
-        </Item>
-        <Item>
-          <SubscriptionsIcon />
-          Subscriptions
-        </Item>
+        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+          <Item>
+            <HomeIcon />
+            Home
+          </Item>
+        </Link>
+        <Link to="trends" style={{ textDecoration: "none", color: "inherit" }}>
+          <Item>
+            <ExploreIcon />
+            Explore
+          </Item>
+        </Link>
+        <Link
+          to="subscriptions"
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
+          <Item>
+            <SubscriptionsIcon />
+            Subscriptions
+          </Item>
+        </Link>
         <Hr />
         <Item>
           <SlideshowIcon />
